@@ -18,8 +18,12 @@ Welcome to Github! Here are a few basic directions.
 
 ## Pushing (for when you're done with the code)
 1. Use `git add .` to add all of the changed files to the commit
-2. Use `git commit -m "Insert description of changes here"` to commit
+2. Use `git commit -m"Insert description of changes here"` to commit
 3. Use `git push` to push to the current branch
 
 ## Merging
 I'm kind of shaky on this. We can just do this manually because its small.
+
+## Other Tips
+- If the commiting process is getting mad at you and you're not sure why, use `git status` to see the status of all of the files in your copy of the repository.
+- Google because git is hard
