@@ -168,7 +168,22 @@ void LongLatToXY(){
   // You can access the current GPS latitude and longitude readings with gps.state.lat and gps.state.lon
   // You can access the current imu heading with imu.state.heading
 
-  
+  // This function calculates the XY-coordinates with respect to an origin
+  // It takes it the latitude and longitude, then updates the variable
+  // stateEstimator.state.x and stateEstimator.state.y
+
+  // Set some constants, including the origin latitude and longitude
+  // Note: you need to update the origin for the field station.
+  // r1 and r2 are constants given by Spjut that seem to be about the right number
+  float r1 = 110574;
+  float r2 = 111320;
+
+  // Then set the actual states
+  state_estimator.state.x = (gps.state.lon-ORIGIN_LON)*cos(ORIGIN_LAT/180*PI)*r1;
+  state_estimator.state.y = (gps.state.lat-ORIGIN_LAT)*r2;
+  state_estimator.state.heading = imu.state.heading;
+
+  //NOTE: Can test with like here to Pasadena
 }
 
 float angleDiff(float a){
@@ -181,4 +196,6 @@ float angleDiff(float a){
   return a;
 
 }
+
+
 
