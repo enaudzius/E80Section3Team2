@@ -183,6 +183,8 @@ void LongLatToXY(){
   state_estimator.state.y = (gps.state.lat-ORIGIN_LAT)*r2;
   state_estimator.state.heading = imu.state.heading;
 
+  printer.printValue("("+String(state_estimator.state.x)+","+String(state_estimator.state.y)+")");
+
   //NOTE: Can test with like here to Pasadena
 }
 
